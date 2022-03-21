@@ -44,14 +44,62 @@ class ServiceTest {
     }
 
     @Test
+    void addStudent_validStudentId_isAdded() {
+        Student student = new Student("1", "nume", 10, "email@domeniu.com");
+        assertNull(service.addStudent(student));
+    }
+
+    @Test
+    void addStudent_validStudentName_isAdded() {
+        Student student = new Student("1", "nume", 10, "email@domeniu.com");
+        assertNull(service.addStudent(student));
+    }
+
+    @Test
     void addStudent_validStudentGroup_isAdded() {
         Student student = new Student("1", "nume", 10, "email@domeniu.com");
         assertNull(service.addStudent(student));
     }
 
     @Test
+    void addStudent_validStudentEmail_isAdded() {
+        Student student = new Student("1", "nume", 10, "email@domeniu.com");
+        assertNull(service.addStudent(student));
+    }
+
+    @Test
+    void addStudent_invalidStudentId_notAdded() {
+        Student student = new Student("", "nume", 10, "email@domeniu.com");
+        assertThrows(ValidationException.class, ()->service.addStudent(student));
+    }
+
+    @Test
+    void addStudent_invalidStudentName_notAdded() {
+        Student student = new Student("1", "", 10, "email@domeniu.com");
+        assertThrows(ValidationException.class, ()->service.addStudent(student));
+    }
+
+    @Test
     void addStudent_invalidStudentGroup_notAdded() {
         Student student = new Student("1", "nume", -10, "email@domeniu.com");
+        assertThrows(ValidationException.class, () -> service.addStudent(student));
+    }
+
+    @Test
+    void addStudent_invalidStudentEmail_notAdded() {
+        Student student = new Student("1", "nume", 10, "");
+        assertThrows(ValidationException.class, ()->service.addStudent(student));
+    }
+
+    @Test
+    void addStudent_groupNumberIsZero_isAdded() {
+        Student student = new Student("1", "nume", 0, "email@domeniu.com");
+        assertNull(service.addStudent(student));
+    }
+
+    @Test
+    void addStudent_groupNumberIsMinusOne_notAdded() {
+        Student student = new Student("1", "nume", -1, "email@domeniu.com");
         assertThrows(ValidationException.class, () -> service.addStudent(student));
     }
 }
