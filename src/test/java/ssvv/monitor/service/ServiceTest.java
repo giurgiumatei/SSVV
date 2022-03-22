@@ -17,7 +17,7 @@ import ssvv.monitor.validation.ValidationException;
 import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
-class ServiceTest {
+public class ServiceTest {
 
     private Service service;
 
