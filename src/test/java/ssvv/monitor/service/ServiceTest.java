@@ -14,8 +14,7 @@ import ssvv.monitor.validation.StudentValidator;
 import ssvv.monitor.validation.TemaValidator;
 import ssvv.monitor.validation.ValidationException;
 
-import static org.junit.jupiter.api.Assertions.assertNull;
-import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.*;
 
 class ServiceTest {
 
@@ -105,17 +104,55 @@ class ServiceTest {
         assertThrows(ValidationException.class, () -> service.addStudent(student));
     }
 
-
     //AddAssignment
     @Test
-    public void addAssignment_validAssignment(){
+    public void addAssignment_validAssignment_isAdded(){
         Tema tema = new Tema("1","descriere",1,1);
         assertNull(service.addTema(tema));
     }
 
     @Test
-    public void addAssignment_invalidAssignment(){
+    public void addAssignment_invalidDataAssignment_notAdded(){
         Tema tema = new Tema("","",1,1);
         assertThrows(ValidationException.class, () -> service.addTema(tema));
+    }
+
+    @Test
+    public void addAssignment_alreadyExistingAssignment_notAdded(){
+        service.addTema(new Tema("123","abc",1,1));
+        assertNotNull(service.addTema(new Tema("123","abc",1,1)));
+        assertEquals(1, service.getAllTeme().spliterator().getExactSizeIfKnown());
+    }
+
+    @Test
+    public void addAssignment_invalidID_throwsValidationException() {
+        assertThrows(ValidationException.class,
+                () -> service.addTema(new Tema(null, "descriere", 1, 1)));
+        assertThrows(ValidationException.class,
+                () -> service.addTema(new Tema("", "descriere", 1, 1)));
+    }
+
+    @Test
+    public void addAssignment_invalidDescription_throwsValidationException() {
+        assertThrows(ValidationException.class,
+                () -> service.addTema(new Tema("nrTema", null, 1, 1)));
+        assertThrows(ValidationException.class,
+                () -> service.addTema(new Tema("nrTema", "", 1, 1)));
+    }
+
+    @Test
+    public void addAssignment_invalidDeadline_throwsValidationException() {
+        assertThrows(ValidationException.class,
+                () -> service.addTema(new Tema("nrTema", "descriere", -2, 1)));
+        assertThrows(ValidationException.class,
+                () -> service.addTema(new Tema("nrTema", "descriere", 155, 1)));
+    }
+
+    @Test
+    public void addAssignment_invalidPrimire_throwsValidationException() {
+        assertThrows(ValidationException.class,
+                () -> service.addTema(new Tema("nrTema", "descriere", 10, -1)));
+        assertThrows(ValidationException.class,
+                () -> service.addTema(new Tema("nrTema", "descriere", 10, 9999)));
     }
 }

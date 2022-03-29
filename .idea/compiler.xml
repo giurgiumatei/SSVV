@@ -8,6 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="TeacherMonitor" />
         <module name="SSVV" />
+        <module name="ssvv" />
       </profile>
     </annotationProcessing>
   </component>
