@@ -9,6 +9,7 @@
         <module name="TeacherMonitor" />
         <module name="SSVV" />
         <module name="ssvv" />
+        <module name="LabGradingApp" />
       </profile>
     </annotationProcessing>
   </component>
