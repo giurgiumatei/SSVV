@@ -1,4 +1,4 @@
-package ssvv.monitor.integration;
+package ssvv.monitor.integration.takehome;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -14,14 +14,13 @@ import ssvv.monitor.utils.FileClearer;
 import ssvv.monitor.validation.NotaValidator;
 import ssvv.monitor.validation.StudentValidator;
 import ssvv.monitor.validation.TemaValidator;
-import ssvv.monitor.validation.ValidationException;
 
 import java.time.LocalDate;
 
-import static org.junit.jupiter.api.Assertions.*;
-import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNull;
 
-public class IntegrationTest {
+public class Integration {
 
     private Service service;
 
@@ -49,28 +48,34 @@ public class IntegrationTest {
     }
 
     @Test
-    public void addStudent_validStudent_isAdded() {
-        Student student = new Student("123", "test", 100, "test@test.com");
+    public void addStudent_integration() {
+        addStudent();
+    }
+
+    @Test
+    public void addAssignment_integration() {
+        addStudent();
+        addAssignment();
+    }
+
+    @Test
+    public void addGrade_integration() {
+        addStudent();
+        addAssignment();
+        addGrade();
+    }
+
+    public void addStudent() {
+        Student student = new Student("123", "name", 100, "some@email.com");
         assertNull(service.addStudent(student));
     }
 
-    @Test
-    public void addAssignment_validAssignment_isAdded() {
-        assertNull(service.addTema(new Tema("123", "test", 1, 1)));
+    public void addAssignment() {
+        assertNull(service.addTema(new Tema("123", "abc", 1, 1)));
     }
-
-    @Test
-    public void addGrade_invalidGrade_throwsValidationException() {
-        assertThrows(ValidationException.class, () -> service.addNota(
-                new Nota("1", "", "", 10.0, LocalDate.now()), "test")
-        );
-    }
-
-    @Test
-    public void testAll() {
-        service.addStudent(new Student("123", "test", 100, "test@test.com"));
-        service.addTema(new Tema("123", "test", 1, 1));
-        assertThrows(ValidationException.class, () -> service.addNota(
-                new Nota("1", "123", "123", 10.0, LocalDate.now()), "test"));
+    // 2022,3,30 (in file)
+    public void addGrade() {
+        service.addNota(new Nota("1","123","123",10.0, LocalDate.of(2022, 4, 5)),"asd");
+        assertEquals(10.0, service.addNota(new Nota("1","123","123",10.0, LocalDate.of(2022, 4, 5)),"asd"));
     }
 }
