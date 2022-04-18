@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="ssvv.monitor.service.ServiceTest" time="0.148" tests="17" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="ssvv.monitor.integration.takehome.IntegrationTests" time="0.032" tests="3" errors="0" skipped="0" failures="0">
   <properties>
     <property name="sun.desktop" value="windows"/>
     <property name="awt.toolkit" value="sun.awt.windows.WToolkit"/>
@@ -63,21 +63,7 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="55.0"/>
   </properties>
-  <testcase name="addAssignment_invalidPrimire_throwsValidationException" classname="ssvv.monitor.service.ServiceTest" time="0.01"/>
-  <testcase name="addStudent_groupNumberIsZero_isAdded" classname="ssvv.monitor.service.ServiceTest" time="0.011"/>
-  <testcase name="addAssignment_invalidDescription_throwsValidationException" classname="ssvv.monitor.service.ServiceTest" time="0.01"/>
-  <testcase name="addStudent_invalidStudentName_notAdded" classname="ssvv.monitor.service.ServiceTest" time="0.012"/>
-  <testcase name="addStudent_groupNumberIsMinusOne_notAdded" classname="ssvv.monitor.service.ServiceTest" time="0.009"/>
-  <testcase name="addAssignment_invalidDeadline_throwsValidationException" classname="ssvv.monitor.service.ServiceTest" time="0.009"/>
-  <testcase name="addStudent_validStudentName_isAdded" classname="ssvv.monitor.service.ServiceTest" time="0.009"/>
-  <testcase name="addAssignment_invalidID_throwsValidationException" classname="ssvv.monitor.service.ServiceTest" time="0.008"/>
-  <testcase name="addAssignment_validAssignment_isAdded" classname="ssvv.monitor.service.ServiceTest" time="0.008"/>
-  <testcase name="addStudent_validStudentGroup_isAdded" classname="ssvv.monitor.service.ServiceTest" time="0.01"/>
-  <testcase name="addAssignment_alreadyExistingAssignment_notAdded" classname="ssvv.monitor.service.ServiceTest" time="0.008"/>
-  <testcase name="addStudent_invalidStudentGroup_notAdded" classname="ssvv.monitor.service.ServiceTest" time="0.007"/>
-  <testcase name="addStudent_invalidStudentId_notAdded" classname="ssvv.monitor.service.ServiceTest" time="0.005"/>
-  <testcase name="addStudent_validStudentEmail_isAdded" classname="ssvv.monitor.service.ServiceTest" time="0.006"/>
-  <testcase name="addAssignment_invalidDataAssignment_notAdded" classname="ssvv.monitor.service.ServiceTest" time="0.007"/>
-  <testcase name="addStudent_invalidStudentEmail_notAdded" classname="ssvv.monitor.service.ServiceTest" time="0.007"/>
-  <testcase name="addStudent_validStudentId_isAdded" classname="ssvv.monitor.service.ServiceTest" time="0.007"/>
+  <testcase name="addStudent_integration" classname="ssvv.monitor.integration.takehome.IntegrationTests" time="0"/>
+  <testcase name="addGrade_integration" classname="ssvv.monitor.integration.takehome.IntegrationTests" time="0.017"/>
+  <testcase name="addAssignment_integration" classname="ssvv.monitor.integration.takehome.IntegrationTests" time="0.012"/>
 </testsuite>
