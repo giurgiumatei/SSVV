@@ -1,0 +1,5 @@
+"Story","Title","Result","Date","Stability","Duration (s)"
+"Search by keyword story","Searching by keyword banana should display the corresponding article","SUCCESS","2022-04-19T15:46:13.3695824+03:00[Europe/Athens]","0.0","7.65"
+"Search by keyword story","Searching by keyword gilau should display the corresponding article","SUCCESS","2022-04-19T15:46:21.6711316+03:00[Europe/Athens]","0.0","3.17"
+"Search by keyword story","Searching by keyword cluj should display the corresponding article","SUCCESS","2022-04-19T15:46:25.1762474+03:00[Europe/Athens]","0.0","3.07"
+"Search by keyword story","Searching by keyword apple should display the corresponding article","SUCCESS","2022-04-19T15:46:28.325878+03:00[Europe/Athens]","0.0","4.18"
