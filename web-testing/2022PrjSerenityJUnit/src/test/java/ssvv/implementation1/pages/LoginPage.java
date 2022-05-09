@@ -1,4 +1,4 @@
-package ssvv.implementation.pages;
+package ssvv.implementation1.pages;
 
 import net.serenitybdd.core.annotations.findby.FindBy;
 import net.serenitybdd.core.pages.WebElementFacade;

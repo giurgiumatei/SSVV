@@ -1,7 +1,7 @@
-package ssvv.implementation.steps;
+package ssvv.implementation1.steps;
 
 import net.thucydides.core.annotations.Step;
-import ssvv.implementation.pages.LoginPage;
+import ssvv.implementation1.pages.LoginPage;
 
 public class EndUserSteps {
     LoginPage loginPage;

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?><testsuite errors="0" failures="1" name="ssvv.implementation2.search.search.SearchByKeywordStoryDdt" skipped="0" tests="2" time="22.2" timestamp="2022-05-10 12:48:18"><testcase classname="ssvv.implementation2.search.search.SearchByKeywordStoryDdt" name="Search wiki by keyword test DDT"><failure message="&#10;Expected: a collection containing a string containing &quot;marte&quot;&#10;     but: was &quot;Ne pare rău, nu am găsit nimic ce să conţină: extraterestri. Vă rugăm să reîncercaţi cu alţi termeni de căutare.&quot;, was &quot;&quot;, was &quot;&quot;" type="java.lang.AssertionError">
+Expected: a collection containing a string containing "marte"
+     but: was "Ne pare rău, nu am găsit nimic ce să conţină: extraterestri. Vă rugăm să reîncercaţi cu alţi termeni de căutare.", was "", was ""</failure><system-err>
+Expected: a collection containing a string containing "marte"
+     but: was "Ne pare rău, nu am găsit nimic ce să conţină: extraterestri. Vă rugăm să reîncercaţi cu alţi termeni de căutare.", was "", was ""&#13;
+ssvv.implementation2.search.steps.EndUserSteps.should_see_definition(EndUserSteps.java:21)&#13;
+ssvv.implementation2.search.search.SearchByKeywordStoryDdt.searchWikiByKeywordTestDDT(SearchByKeywordStoryDdt.java:42)&#13;
+</system-err></testcase></testsuite>

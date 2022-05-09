@@ -1,4 +1,4 @@
-package ssvv.implementation.login;
+package ssvv.implementation1.login;
 
 import net.serenitybdd.junit.runners.SerenityParameterizedRunner;
 import net.thucydides.core.annotations.Issue;
@@ -8,11 +8,10 @@ import net.thucydides.core.annotations.Steps;
 import net.thucydides.core.pages.Pages;
 import net.thucydides.junit.annotations.Qualifier;
 import net.thucydides.junit.annotations.UseTestDataFrom;
-import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
-import ssvv.implementation.steps.EndUserSteps;
+import ssvv.implementation1.steps.EndUserSteps;
 
 @RunWith(SerenityParameterizedRunner.class)
 @UseTestDataFrom("src/test/resources/credentials.csv")
